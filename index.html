@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAYMI火影練功村 — 火影忍者名言五十音特訓講義</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --naruto-orange: #f97316;
+      --naruto-red: #dc2626;
+      --hinata-purple: #6366f1;
+      --itachi-crimson: #991b1b;
+      --sasori-rose: #be123c;
+      --leaf-green: #15803d;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+      background-color: #fffbeb;
+      color: #1e293b;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    .jp-text {
+      font-family: 'Noto Sans JP', 'Noto Sans TC', sans-serif;
+      line-height: 2.35;
+    }
+
+    ruby {
+      ruby-align: center;
+      ruby-position: over;
+    }
+
+    rt {
+      font-size: 0.62em;
+      color: #dc2626;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .romaji-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #f97316, #dc2626);
+      color: #ffffff;
+      font-weight: 900;
+      padding: 0px 8px;
+      margin: 0 3px;
+      border-radius: 6px;
+      border: 2px solid #fef08a;
+      box-shadow: 0 2px 4px rgba(220, 38, 38, 0.25);
+      font-family: 'Noto Sans TC', monospace;
+      font-size: 0.95em;
+      vertical-align: baseline;
+      letter-spacing: 0.05em;
+    }
+
+    .option-btn {
+      transition: all 0.15s ease;
+    }
+
+    .option-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    /* Print / PDF Styles for Color A4 Printing */
+    @page {
+      size: A4 portrait;
+      margin: 10mm;
+    }
+
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        font-size: 11pt;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-page-break {
+        page-break-before: always;
+        break-before: page;
+      }
+      .question-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        box-shadow: none !important;
+        margin-bottom: 8px !important;
+        padding: 10px 12px !important;
+      }
+      .workbook-container {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen pb-16">
+
+  <!-- Top Sticky Action Bar (Hidden when printing to PDF) -->
+  <header class="no-print sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b-4 border-orange-500 text-white shadow-xl">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="text-2xl">🍥</span>
+        <div>
+          <h1 class="font-black text-lg tracking-wider text-orange-400">MAYMI火影練功村</h1>
+          <p class="text-xs text-slate-300">『NARUTO -ナルト-』五十音認字特訓彩色講義（可互動練習 / 一鍵輸出彩色 PDF）</p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2 text-sm">
+        <a href="#sec-part1" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-orange-300 font-bold">① 50題名言選擇</a>
+        <a href="#sec-part2" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-300 font-bold">② 假名連連看(40題)</a>
+        <a href="#sec-part3" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-purple-300 font-bold">③ 20角色平假名猜謎</a>
+        <a href="#sec-answers" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-yellow-300 font-bold">④ 亂數解答篇</a>
+        <button onclick="toggleInteractiveAns()" id="toggleAnsBtn" class="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 font-bold text-white shadow">
+          👁️ 顯示題目即時對答
+        </button>
+        <button onclick="window.print()" class="px-4 py-1.5 rounded-lg bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-500 font-black text-white shadow-lg flex items-center gap-1.5">
+          <span>🖨️</span> 匯出彩色 PDF / 列印
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Workbook Container -->
+  <main class="workbook-container max-w-5xl mx-auto px-4 pt-6">
+
+    <!-- Cover Banner -->
+    <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-orange-500 via-red-600 to-slate-900 text-white p-6 md:p-8 mb-8 border-4 border-amber-300 shadow-2xl">
+      <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-300 text-slate-900 font-black text-xs mb-3 tracking-widest uppercase">
+            KONOHA & AKATSUKI SPECIAL EDITION • 彩色印刷特訓卷
+          </div>
+          <h1 class="text-3xl md:text-5xl font-black tracking-tight mb-2 drop-shadow">
+            🔥 MAYMI火影練功村
+          </h1>
+          <p class="text-base md:text-lg text-orange-100 font-medium max-w-2xl">
+            『NARUTO -ナルト-』（少年篇＋雛田・宇智波鼬・赤砂之蠍經典語錄特輯）<br/>
+            全漢字標註振假名（Ruby）× 羅馬拼音認字挖空 × 假名詞彙連連看 × 角色平假名猜漢字
+          </p>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-md border-2 border-white/30 rounded-2xl p-4 text-sm shrink-0 w-full md:w-64">
+          <div class="font-bold text-amber-300 mb-2 border-b border-white/20 pb-1">🥷 忍者學員資料欄</div>
+          <div class="space-y-2 text-white">
+            <div class="flex justify-between"><span>學員姓名：</span><span class="border-b border-white/60 w-32 inline-block"></span></div>
+            <div class="flex justify-between"><span>修練日期：</span><span class="border-b border-white/60 w-32 inline-block"></span></div>
+            <div class="flex justify-between"><span>總分紀錄：</span><span class="border-b border-white/60 w-32 inline-block text-right">/ 100</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Color Legend -->
+      <div class="mt-6 pt-4 border-t border-white/20 flex flex-wrap gap-2 text-xs font-bold">
+        <span class="px-3 py-1 rounded-full bg-indigo-600 text-white">💜 日向雛田（10題）</span>
+        <span class="px-3 py-1 rounded-full bg-red-800 text-white">🩸 宇智波鼬（10題）</span>
+        <span class="px-3 py-1 rounded-full bg-rose-600 text-white">🦂 赤砂之蠍 サソリ（10題）</span>
+        <span class="px-3 py-1 rounded-full bg-amber-500 text-slate-950">🍥 少年篇經典角色（20題）</span>
+      </div>
+    </section>
+
+    <!-- PDF Export Tip (Hidden in Print) -->
+    <div class="no-print mb-6 p-4 rounded-2xl bg-amber-100 border-2 border-amber-400 text-amber-950 text-sm flex flex-wrap items-center justify-between gap-3">
+      <div>
+        <strong>💡 彩色 PDF 輸出小撇步：</strong> 點擊右上角「<strong>🖨️ 匯出彩色 PDF / 列印</strong>」後，在印表機目的地選擇「<strong>另存為 PDF (Save as PDF)</strong>」，並勾選「<strong>背景圖形 (Background graphics)</strong>」，即可獲得完美排版、無截斷的 A4 彩色 PDF 講義！您也可以直接在網頁上點擊選項作答。
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- PART 1: 50 MULTIPLE CHOICE QUESTIONS       -->
+    <!-- ========================================== -->
+    <section id="sec-part1" class="mb-12">
+      <div class="flex items-center justify-between bg-gradient-to-r from-orange-600 to-red-600 text-white px-6 py-4 rounded-2xl shadow-lg mb-6 border-l-8 border-yellow-300">
+        <div>
+          <h2 class="text-xl md:text-2xl font-black">第一部：火影知名台詞・五十音認字特訓（共 50 題）</h2>
+          <p class="text-xs md:text-sm text-orange-100 mt-0.5">
+            請觀察日文台詞中變成 <span class="romaji-badge text-xs">ROMA字</span> 的部分，從 A、B、C、D 四個外觀相似的平假名中選出正確的字！
+          </p>
+        </div>
+        <span class="text-3xl font-black bg-white/20 px-4 py-1.5 rounded-xl">Q1 ~ Q50</span>
+      </div>
+
+      <div id="questions-container" class="grid grid-cols-1 gap-4"></div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- PART 2: MATCHING EXERCISES (2 PAGES x 20)  -->
+    <!-- ========================================== -->
+    <section id="sec-part2" class="print-page-break mb-12">
+      <div class="flex items-center justify-between bg-gradient-to-r from-emerald-700 to-teal-600 text-white px-6 py-4 rounded-2xl shadow-lg mb-4 border-l-8 border-emerald-300">
+        <div>
+          <h2 class="text-xl md:text-2xl font-black">第二部：忍術與名言詞彙連連看（第 1 頁：共 20 題）</h2>
+          <p class="text-xs md:text-sm text-emerald-100 mt-0.5">
+            請將左排（1～20）的日文假名詞彙（附羅馬拼音輔助），連到右排（A～T）對應的中文意思，或將英文代號填入括號中！
+          </p>
+        </div>
+        <span class="text-2xl font-black bg-white/20 px-4 py-1.5 rounded-xl">Page 1 / 2</span>
+      </div>
+
+      <div id="matching-page-1" class="bg-white rounded-2xl border-2 border-emerald-500 p-5 shadow-md mb-8"></div>
+
+      <!-- Matching Page 2 -->
+      <div class="print-page-break">
+        <div class="flex items-center justify-between bg-gradient-to-r from-teal-700 to-cyan-600 text-white px-6 py-4 rounded-2xl shadow-lg mb-4 border-l-8 border-cyan-300">
+          <div>
+            <h2 class="text-xl md:text-2xl font-black">第二部：忍術與名言詞彙連連看（第 2 頁：共 20 題）</h2>
+            <p class="text-xs md:text-sm text-cyan-100 mt-0.5">
+              請將左排（21～40）的日文假名詞彙（附羅馬拼音輔助），連到右排（A～T）對應的中文意思，或將英文代號填入括號中！
+            </p>
+          </div>
+          <span class="text-2xl font-black bg-white/20 px-4 py-1.5 rounded-xl">Page 2 / 2</span>
+        </div>
+
+        <div id="matching-page-2" class="bg-white rounded-2xl border-2 border-cyan-500 p-5 shadow-md"></div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- PART 3: 20 HIRAGANA CHARACTER NAMES        -->
+    <!-- ========================================== -->
+    <section id="sec-part3" class="print-page-break mb-12">
+      <div class="flex items-center justify-between bg-gradient-to-r from-purple-700 to-indigo-700 text-white px-6 py-4 rounded-2xl shadow-lg mb-6 border-l-8 border-purple-300">
+        <div>
+          <h2 class="text-xl md:text-2xl font-black">第三部：誰是哪位忍者？20 個角色平假名猜漢字大挑戰</h2>
+          <p class="text-xs md:text-sm text-purple-100 mt-0.5">
+            以下 20 個名字全部都是用「平假名」寫成的火影忍者重要角色，請試著拼讀看看，寫出他們的中文（漢字）角色名稱！
+          </p>
+        </div>
+        <span class="text-2xl font-black bg-white/20 px-4 py-1.5 rounded-xl">20 名角色</span>
+      </div>
+
+      <div id="char-quiz-container" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- PART 4: RANDOMIZED ANSWER KEY              -->
+    <!-- ========================================== -->
+    <section id="sec-answers" class="print-page-break mb-12">
+      <div class="flex items-center justify-between bg-gradient-to-r from-slate-800 to-slate-900 text-white px-6 py-4 rounded-2xl shadow-lg mb-6 border-l-8 border-amber-400">
+        <div>
+          <h2 class="text-xl md:text-2xl font-black text-amber-300">第四部：MAYMI火影練功村・標準解答卷（完全亂數設計）</h2>
+          <p class="text-xs md:text-sm text-slate-300 mt-0.5">
+            本解答採用完全亂數分配（無規則循環），並附上每個挖空假名的完整讀音與對照。
+          </p>
+        </div>
+        <span class="text-2xl font-black bg-amber-400 text-slate-950 px-4 py-1.5 rounded-xl">機密卷軸</span>
+      </div>
+
+      <!-- 50 MC Answers -->
+      <div class="bg-white rounded-2xl border-2 border-slate-300 p-5 shadow-md mb-6">
+        <h3 class="font-black text-lg text-slate-800 border-b-2 border-orange-400 pb-2 mb-4">
+          🎯 第一部解答：50 題名言選擇題（亂數答案＋正確假名＋目標單字）
+        </h3>
+        <div id="mc-answers-grid" class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 text-sm"></div>
+      </div>
+
+      <!-- Matching Answers -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-white rounded-2xl border-2 border-emerald-400 p-5 shadow-md">
+          <h3 class="font-black text-lg text-emerald-800 border-b-2 border-emerald-300 pb-2 mb-3">
+            🔗 第二部解答：連連看（第 1 頁：1～20 題）
+          </h3>
+          <div id="match1-answers-grid" class="grid grid-cols-2 gap-2 text-xs"></div>
+        </div>
+        <div class="bg-white rounded-2xl border-2 border-cyan-400 p-5 shadow-md">
+          <h3 class="font-black text-lg text-cyan-800 border-b-2 border-cyan-300 pb-2 mb-3">
+            🔗 第二部解答：連連看（第 2 頁：21～40 題）
+          </h3>
+          <div id="match2-answers-grid" class="grid grid-cols-2 gap-2 text-xs"></div>
+        </div>
+      </div>
+
+      <!-- Character Name Answers -->
+      <div class="bg-white rounded-2xl border-2 border-purple-400 p-5 shadow-md">
+        <h3 class="font-black text-lg text-purple-900 border-b-2 border-purple-300 pb-2 mb-3">
+          🥷 第三部解答：20 個火影角色平假名對應中文漢字
+        </h3>
+        <div id="char-answers-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5 text-xs"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // ============================================================================
+    // 1. 50 NARUTO FAMOUS QUOTES DATA
+    //    Includes Hinata (10), Itachi (10), Sasori (10), Other Part 1 Icons (20)
+    //    Pre-assigned non-repeating true random answer indices (0=A, 1=B, 2=C, 3=D)
+    // ============================================================================
+    const questionsData = [
+      // --- 日向雛田 (Hinata Hyuga) 1~10 ---
+      {
+        id: 1,
+        speaker: "日向雛田",
+        category: "hinata",
+        jpHtml: `<ruby>私<rt>わたし</rt></ruby>も… <ruby>言<rt>い</rt></ruby>った<ruby>事<rt>こと</rt></ruby>は<ruby>曲<rt>ま</rt></ruby>げ<span class="romaji-badge">NA</span>い… だってそれが、<ruby>私<rt>わたし</rt></ruby>の<ruby>忍道<rt>にんどう</rt></ruby>だから！`,
+        zh: "我也是…說出口的話絕對不會違背…因為這就是我的忍道！",
+        wordHint: "まげ【NA】い（不會違背／不轉彎）",
+        romaji: "NA",
+        correctKana: "な",
+        distractors: ["た", "は", "ま"],
+        correctIndex: 2 // C
+      },
+      {
+        id: 2,
+        speaker: "日向雛田",
+        category: "hinata",
+        jpHtml: `ナルトくんを<ruby>見<rt>み</rt></ruby>ていると… <ruby>私<rt>わたし</rt></ruby>まで<ruby>勇気<rt>ゆう【KI】</rt></ruby>がわいてくるの。`,
+        zh: "只要看著鳴人君…連我也會湧出勇氣來。",
+        wordHint: "ゆう【KI】（勇氣）",
+        romaji: "KI",
+        correctKana: "き",
+        distractors: ["さ", "ち", "ら"],
+        correctIndex: 0 // A
+      },
+      {
+        id: 3,
+        speaker: "日向雛田",
+        category: "hinata",
+        jpHtml: `ナルトくんの<ruby>笑顔<rt>えがお</rt></ruby>が、<ruby>私<rt>わたし</rt></ruby>を<ruby>救<rt>す【KU】</rt></ruby>ってくれたんだよ。`,
+        zh: "是鳴人君的笑容，拯救了我喔。",
+        wordHint: "す【KU】って（拯救了）",
+        romaji: "KU",
+        correctKana: "く",
+        distractors: ["へ", "て", "と"],
+        correctIndex: 3 // D
+      },
+      {
+        id: 4,
+        speaker: "日向雛田",
+        category: "hinata",
+        jpHtml: `<ruby>私<rt>わたし</rt></ruby>が<ruby>本当<rt>ほんとう</rt></ruby>に<ruby>変<rt>か</rt></ruby>われるかどう<span class="romaji-badge">KA</span>… ナルトくん、ずっと<ruby>見<rt>み</rt></ruby>ててくれたらうれしいな。`,
+        zh: "我到底能不能真正改變呢…鳴人君，如果你能一直看著我，我會很開心的。",
+        wordHint: "どう【KA】（是否…呢）",
+        romaji: "KA",
+        correctKana: "か",
+        distractors: ["や", "せ", "け"],
+        correctIndex: 1 // B
+      },
+      {
+        id: 5,
+        speaker: "日向雛田",
+        category: "hinata",
+        jpHtml: `<ruby>本当<rt>ほんとう</rt></ruby>の<ruby>強<rt>つよ</rt></ruby>さって、<ruby>失敗<rt>しっぱい</rt></ruby>から<ruby>立<rt>た</rt></ruby>ち<ruby>上<rt>あ</rt></ruby>がる<ruby>強<rt>【TSU】よ</rt></ruby>さだと<ruby>思<rt>おも</rt></ruby>うの！`,
+        zh: "我覺得真正的堅強，是從失敗中重新站起來的堅強！",
+        wordHint: "【TSU】よさ（堅強／強大）",
+        romaji: "TSU",
+        correctKana: "つ",
+        distractors: ["し", "う", "て"],
+        correctIndex: 3 // D
+      },
+      {
+        id: 6,
+        speaker: "日向雛田",
+        category: "hinata",
+        jpHtml: `ネジ<ruby>兄<rt>にい</rt></ruby>さん… もう<ruby>逃<rt>【NI】</rt></ruby>げたくないの…！`,
+        zh: "寧次哥哥…我已經不想再逃避了…！",
+        wordHint: "【NI】げたくない（不想逃避）",
+        romaji: "NI",
+        correctKana: "に",
+        distractors: ["こ", "た", "け"],
+        correctIndex: 0 // A
+      },
+      {
+        id: 7,
+        speaker: "日向雛田",
+        category: "hinata",
+        jpHtml: `<ruby>私<rt>わたし</rt></ruby>の<ruby>目<rt>め</rt></ruby>には、ナルトくんは<ruby>誇<rt>ほこ</rt></ruby>り<ruby>高<rt>たか</rt></ruby>き<ruby>失敗者<rt>しっぱいしゃ</rt></ruby>に<ruby>見<rt>【MI】</rt></ruby>えるよ！`,
+        zh: "在我眼中，鳴人君看起來是一位充滿驕傲的失敗者喔！",
+        wordHint: "【MI】える（看起來／看得見）",
+        romaji: "MI",
+        correctKana: "み",
+        distractors: ["む", "す", "ら"],
+        correctIndex: 2 // C
+      },
+      {
+        id: 8,
+        speaker: "日向雛田",
+        category: "hinata",
+        jpHtml: `<ruby>少<rt>すこ</rt></ruby>しでもナルトくんに<ruby>近<rt>ちか</rt></ruby>づきたくて… がんばっ<span class="romaji-badge">TE</span>みたんだ。`,
+        zh: "因為想要哪怕只有一點點也好、更靠近鳴人君…所以我試著努力了。",
+        wordHint: "がんばっ【TE】（努力著）",
+        romaji: "TE",
+        correctKana: "て",
+        distractors: ["と", "く", "そ"],
+        correctIndex: 1 // B
+      },
+      {
+        id: 9,
+        speaker: "日向雛田",
+        category: "hinata",
+        jpHtml: `<ruby>諦<rt>あき【RA】</rt></ruby>めない<ruby>心<rt>こころ</rt></ruby>を、ナルトくんが<ruby>教<rt>おし</rt></ruby>えてくれたから。`,
+        zh: "因為不放棄的心，是鳴人君教會我的。",
+        wordHint: "あき【RA】めない（不放棄）",
+        romaji: "RA",
+        correctKana: "ら",
+        distractors: ["ち", "ろ", "う"],
+        correctIndex: 0 // A
+      },
+      {
+        id: 10,
+        speaker: "日向雛田",
+        category: "hinata",
+        jpHtml: `<ruby>私<rt>わたし</rt></ruby>はナルトくんが… <ruby>大好<rt>だい【SU】</rt></ruby>きだから！`,
+        zh: "因為我…最喜歡鳴人君了！",
+        wordHint: "だい【SU】き（最喜歡）",
+        romaji: "SU",
+        correctKana: "す",
+        distractors: ["む", "ま", "お"],
+        correctIndex: 2 // C
+      },
+
+      // --- 宇智波鼬 (Itachi Uchiha) 11~20 ---
+      {
+        id: 11,
+        speaker: "宇智波鼬",
+        category: "itachi",
+        jpHtml: `<ruby>愚<rt>お【RO】</rt></ruby>かなる<ruby>弟<rt>おとうと</rt></ruby>よ… この<ruby>俺<rt>おれ</rt></ruby>を<ruby>殺<rt>ころ</rt></ruby>したくば、<ruby>恨<rt>うら</rt></ruby>め！<ruby>憎<rt>にく</rt></ruby>め！`,
+        zh: "愚蠢的弟弟啊…如果想殺了我，就怨恨吧！憎恨吧！",
+        wordHint: "お【RO】かなる（愚蠢的）",
+        romaji: "RO",
+        correctKana: "ろ",
+        distractors: ["る", "そ", "ら"],
+        correctIndex: 3 // D
+      },
+      {
+        id: 12,
+        speaker: "宇智波鼬",
+        category: "itachi",
+        jpHtml: `<ruby>許<rt>ゆ【RU】</rt></ruby>せサスケ… これで<ruby>最後<rt>さいご</rt></ruby>だ。`,
+        zh: "原諒我吧，佐助…這是最後一次了。",
+        wordHint: "ゆ【RU】せ（原諒我吧）",
+        romaji: "RU",
+        correctKana: "る",
+        distractors: ["ろ", "そ", "ち"],
+        correctIndex: 1 // B
+      },
+      {
+        id: 13,
+        speaker: "宇智波鼬",
+        category: "itachi",
+        jpHtml: `<ruby>人<rt>ひと</rt></ruby>は<ruby>己<rt>おのれ</rt></ruby>の<ruby>知識<rt>ちしき</rt></ruby>や<ruby>認識<rt>にんしき</rt></ruby>に<ruby>縛<rt>し【BA】</rt></ruby>られて<ruby>生<rt>い</rt></ruby>きている。`,
+        zh: "人都是受限於自己的知識與認知而活著的。",
+        wordHint: "し【BA】られて（被束縛著）",
+        romaji: "BA",
+        correctKana: "ば",
+        distractors: ["ほ", "ま", "ぱ"],
+        correctIndex: 0 // A
+      },
+      {
+        id: 14,
+        speaker: "宇智波鼬",
+        category: "itachi",
+        jpHtml: `お<ruby>前<rt>まえ</rt></ruby>は<ruby>弱<rt>よ【WA】</rt></ruby>い… なぜ<ruby>弱<rt>よわ</rt></ruby>いか？ <ruby>憎<rt>にく</rt></ruby>しみが<ruby>足<rt>た</rt></ruby>りないからだ。`,
+        zh: "你太弱了…為什麼這麼弱？因為你的憎恨還不夠。",
+        wordHint: "よ【WA】い（弱小的）",
+        romaji: "WA",
+        correctKana: "わ",
+        distractors: ["ね", "れ", "ゆ"],
+        correctIndex: 2 // C
+      },
+      {
+        id: 15,
+        speaker: "宇智波鼬",
+        category: "itachi",
+        jpHtml: `<ruby>月読<rt>つくよみ</rt></ruby>の<ruby>世界<rt>せかい</rt></ruby>では、<ruby>空間<rt>くうかん</rt></ruby>も<ruby>時間<rt>じかん</rt></ruby>もすべて<ruby>俺<rt>お【RE】</rt></ruby>が<ruby>支配<rt>しはい</rt></ruby>する。`,
+        zh: "在月讀的世界裡，無論空間還是時間，一切都由我支配。",
+        wordHint: "お【RE】（我）",
+        romaji: "RE",
+        correctKana: "れ",
+        distractors: ["ね", "わ", "ぬ"],
+        correctIndex: 3 // D
+      },
+      {
+        id: 16,
+        speaker: "宇智波鼬",
+        category: "itachi",
+        jpHtml: `<ruby>火影<rt>ほかげ</rt></ruby>になった者が<ruby>皆<rt>みな</rt></ruby>から<ruby>認<rt>み【TO】</rt></ruby>められるのではない。<ruby>皆<rt>みな</rt></ruby>から<ruby>認<rt>みと</rt></ruby>められた者が<ruby>火影<rt>ほかげ</rt></ruby>になるのだ。`,
+        zh: "並不是成為火影的人就會被大家認同，而是被大家認同的人才會成為火影。",
+        wordHint: "み【TO】められる（被認同）",
+        romaji: "TO",
+        correctKana: "と",
+        distractors: ["て", "こ", "く"],
+        correctIndex: 1 // B
+      },
+      {
+        id: 17,
+        speaker: "宇智波鼬",
+        category: "itachi",
+        jpHtml: `<ruby>自分<rt>じぶん</rt></ruby>の<ruby>器<rt>うつわ</rt></ruby>を<ruby>測<rt>はか</rt></ruby>る<span class="romaji-badge">NI</span>、貴様らはちょうどいい。`,
+        zh: "用來衡量我自己的器量，你們幾個剛剛好。",
+        wordHint: "はかる【NI】（用來衡量）",
+        romaji: "NI",
+        correctKana: "に",
+        distractors: ["こ", "た", "り"],
+        correctIndex: 0 // A
+      },
+      {
+        id: 18,
+        speaker: "宇智波鼬",
+        category: "itachi",
+        jpHtml: `<ruby>仲間<rt>なか【MA】</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れるな。お<ruby>前<rt>まえ</rt></ruby>ひとりで何でもできると<ruby>思<rt>おも</rt></ruby>うな。`,
+        zh: "別忘了夥伴。不要以為光靠你自己一個人什麼都做得到。",
+        wordHint: "なか【MA】（夥伴）",
+        romaji: "MA",
+        correctKana: "ま",
+        distractors: ["は", "ほ", "よ"],
+        correctIndex: 2 // C
+      },
+      {
+        id: 19,
+        speaker: "宇智波鼬",
+        category: "itachi",
+        jpHtml: `お<ruby>前<rt>まえ</rt></ruby>がこれからどう<ruby>な<rt></rt></ruby>ろうと、お<ruby>前<rt>まえ</rt></ruby>をずっと<ruby>愛<rt>【A】い</rt></ruby>している。`,
+        zh: "無論你今後會變得如何，我都會一直深愛著你。",
+        wordHint: "【A】いしている（深愛著）",
+        romaji: "A",
+        correctKana: "あ",
+        distractors: ["お", "め", "ぬ"],
+        correctIndex: 1 // B
+      },
+      {
+        id: 20,
+        speaker: "宇智波鼬",
+        category: "itachi",
+        jpHtml: `<ruby>万華鏡写輪眼<rt>まんげきょうしゃりんがん</rt></ruby>… この<ruby>眼<rt>【ME】</rt></ruby>は<ruby>闇<rt>やみ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>でこそ<ruby>光<rt>ひかり</rt></ruby>を<ruby>見<rt>み</rt></ruby>る。`,
+        zh: "萬花筒寫輪眼…這雙眼睛唯有在黑暗之中才能看見光芒。",
+        wordHint: "【ME】（眼睛）",
+        romaji: "ME",
+        correctKana: "め",
+        distractors: ["ぬ", "あ", "の"],
+        correctIndex: 3 // D
+      },
+
+      // --- 赤砂之蠍 (Sasori / サソリ) 21~30 ---
+      {
+        id: 21,
+        speaker: "赤砂之蠍（サソリ）",
+        category: "sasori",
+        jpHtml: `<ruby>芸術<rt>げいじゅつ</rt></ruby>とは、<ruby>永遠<rt>えいえん</rt></ruby>の<ruby>美<rt>うつく</rt></ruby>し<span class="romaji-badge">SA</span>だ。`,
+        zh: "所謂的藝術，就是永恆的美。",
+        wordHint: "うつくし【SA】（美麗／美感）",
+        romaji: "SA",
+        correctKana: "さ",
+        distractors: ["き", "ち", "ら"],
+        correctIndex: 0 // A
+      },
+      {
+        id: 22,
+        speaker: "赤砂之蠍（サソリ）",
+        category: "sasori",
+        jpHtml: `<ruby>俺<rt>おれ</rt></ruby>は<ruby>人<rt>ひと</rt></ruby>を<ruby>待<rt>ま</rt></ruby>つのも、<ruby>人<rt>ひと</rt></ruby>を<ruby>待<rt>ま</rt></ruby>た<span class="romaji-badge">SE</span>るのも<ruby>嫌<rt>きら</rt></ruby>いなんだ。`,
+        zh: "我最討厭等人，也討厭讓別人等。",
+        wordHint: "また【SE】る（讓別人等）",
+        romaji: "SE",
+        correctKana: "せ",
+        distractors: ["か", "や", "さ"],
+        correctIndex: 2 // C
+      },
+      {
+        id: 23,
+        speaker: "赤砂之蠍（サソリ）",
+        category: "sasori",
+        jpHtml: `デイダラ、お<ruby>前<rt>まえ</rt></ruby>は<ruby>芸術<rt>げいじゅつ</rt></ruby>が<ruby>何<rt>な【NI】</rt></ruby>かまったく<ruby>分<rt>わ</rt></ruby>かっていない。`,
+        zh: "迪達拉，你根本完全不懂什麼叫做藝術。",
+        wordHint: "な【NI】（什麼）",
+        romaji: "NI",
+        correctKana: "に",
+        distractors: ["こ", "た", "け"],
+        correctIndex: 1 // B
+      },
+      {
+        id: 24,
+        speaker: "赤砂之蠍（サソリ）",
+        category: "sasori",
+        jpHtml: `<ruby>朽<rt>く</rt></ruby>ち<span class="romaji-badge">NA</span>い<ruby>傀儡<rt>くぐつ</rt></ruby>こそが、<ruby>最高<rt>さいこう</rt></ruby>の<ruby>作品<rt>さくひん</rt></ruby>だ。`,
+        zh: "唯有永不腐朽的傀儡，才是最棒的作品。",
+        wordHint: "くち【NA】い（不會腐朽）",
+        romaji: "NA",
+        correctKana: "な",
+        distractors: ["た", "は", "ま"],
+        correctIndex: 3 // D
+      },
+      {
+        id: 25,
+        speaker: "赤砂之蠍（サソリ）",
+        category: "sasori",
+        jpHtml: `<ruby>自分<rt>じぶん</rt></ruby>の<ruby>体<rt>から【DA】</rt></ruby>さえも<ruby>傀儡<rt>くぐつ</rt></ruby>に<ruby>変<rt>か</rt></ruby>えたからこそ、<ruby>俺<rt>おれ</rt></ruby>は<ruby>老<rt>お</rt></ruby>いない。`,
+        zh: "正因為連自己的身體都改造成了傀儡，我才不會衰老。",
+        wordHint: "から【DA】（身體）",
+        romaji: "DA",
+        correctKana: "だ",
+        distractors: ["た", "に", "な"],
+        correctIndex: 0 // A
+      },
+      {
+        id: 26,
+        speaker: "赤砂之蠍（サソリ）",
+        category: "sasori",
+        jpHtml: `チヨバア… あんたの<ruby>手<rt>【TE】</rt></ruby>の<ruby>内<rt>うち</rt></ruby>は、すべてお<ruby>見通<rt>みとお</rt></ruby>しだ。`,
+        zh: "千代婆婆…妳的底細招數，我早就全部看穿了。",
+        wordHint: "【TE】のうち（底細／招數）",
+        romaji: "TE",
+        correctKana: "て",
+        distractors: ["と", "く", "へ"],
+        correctIndex: 2 // C
+      },
+      {
+        id: 27,
+        speaker: "赤砂之蠍（サソリ）",
+        category: "sasori",
+        jpHtml: `<ruby>三代目風影<rt>さんだいめかぜかげ</rt></ruby>は、<ruby>俺<rt>おれ</rt></ruby>のコレクションの<ruby>中<rt>なか</rt></ruby>でもお<ruby>気<rt>き</rt></ruby>に<ruby>入<rt>い【RI】</rt></ruby>りでな。`,
+        zh: "三代風影，在我的收藏品當中可是最中意的一件呢。",
+        wordHint: "おきにい【RI】（中意／喜愛之物）",
+        romaji: "RI",
+        correctKana: "り",
+        distractors: ["い", "け", "に"],
+        correctIndex: 3 // D
+      },
+      {
+        id: 28,
+        speaker: "赤砂之蠍（サソリ）",
+        category: "sasori",
+        jpHtml: `<ruby>赤秘技<rt>あかひぎ</rt></ruby>・<ruby>百機操演<rt>ひゃっきそうえん</rt></ruby>… これで<ruby>一国<rt>いっこく</rt></ruby>を<ruby>落<rt>【O】</rt></ruby>としたのさ。`,
+        zh: "赤秘技・百機操演…我就是用這招攻陷了一個國家。",
+        wordHint: "【O】とした（攻陷／擊落）",
+        romaji: "O",
+        correctKana: "お",
+        distractors: ["あ", "す", "む"],
+        correctIndex: 1 // B
+      },
+      {
+        id: 29,
+        speaker: "赤砂之蠍（サソリ）",
+        category: "sasori",
+        jpHtml: `<ruby>人間<rt>にんげん</rt></ruby>の<ruby>心<rt>ここ【RO】</rt></ruby>などという<ruby>邪魔<rt>じゃま</rt></ruby>なものは、<ruby>全部<rt>ぜんぶ</rt></ruby><ruby>捨<rt>す</rt></ruby>てたはずなのに…。`,
+        zh: "像人類的心那種礙事的東西，我應該早就全部捨棄了才對…",
+        wordHint: "ここ【RO】（心）",
+        romaji: "RO",
+        correctKana: "ろ",
+        distractors: ["る", "そ", "ち"],
+        correctIndex: 0 // A
+      },
+      {
+        id: 30,
+        speaker: "赤砂之蠍（サソリ）",
+        category: "sasori",
+        jpHtml: `<ruby>最後<rt>さいご</rt></ruby>に… <ruby>父<rt>とう</rt></ruby>さんと<ruby>母<rt>かあ</rt></ruby>さんの<ruby>傀儡<rt>く【GU】つ</rt></ruby>に<ruby>抱<rt>だ</rt></ruby>かれるとはな…。`,
+        zh: "沒想到在最後…竟然會被爸爸與媽媽的傀儡擁抱啊…",
+        wordHint: "く【GU】つ（傀儡）",
+        romaji: "GU",
+        correctKana: "ぐ",
+        distractors: ["く", "へ", "て"],
+        correctIndex: 2 // C
+      },
+
+      // --- 少年篇其他經典角色台詞 (Other Main Characters) 31~50 ---
+      {
+        id: 31,
+        speaker: "漩渦鳴人",
+        category: "other",
+        jpHtml: `<ruby>まっすぐ<rt></rt></ruby><ruby>自分<rt>じぶん</rt></ruby>の<ruby>言葉<rt>ことば</rt></ruby>は<ruby>曲<rt>ま</rt></ruby>げ<span class="romaji-badge">NE</span>ェ… それが<ruby>俺<rt>おれ</rt></ruby>の<ruby>忍道<rt>にんどう</rt></ruby>だ！`,
+        zh: "筆直向前、絕不違背自己的話語…這就是我的忍道！",
+        wordHint: "まげ【NE】ェ（絕不違背）",
+        romaji: "NE",
+        correctKana: "ね",
+        distractors: ["れ", "わ", "ぬ"],
+        correctIndex: 1 // B
+      },
+      {
+        id: 32,
+        speaker: "漩渦鳴人",
+        category: "other",
+        jpHtml: `<ruby>俺<rt>おれ</rt></ruby>が<ruby>火影<rt>ほ【KA】げ</rt></ruby>になって、里の<ruby>皆<rt>みんな</rt></ruby>に<ruby>認<rt>みと</rt></ruby>めさせてやるってばよ！`,
+        zh: "我要成為火影，讓村子裡的大家都認同我！",
+        wordHint: "ほ【KA】げ（火影）",
+        romaji: "KA",
+        correctKana: "か",
+        distractors: ["や", "せ", "け"],
+        correctIndex: 3 // D
+      },
+      {
+        id: 33,
+        speaker: "宇智波佐助",
+        category: "other",
+        jpHtml: `<ruby>俺<rt>おれ</rt></ruby>は<ruby>復讐者<rt>ふくしゅうしゃ</rt></ruby>だ… あの<ruby>男<rt>おと【KO】</rt></ruby>を<ruby>殺<rt>ころ</rt></ruby>すまで、<ruby>死<rt>し</rt></ruby>ぬわけにはいかない。`,
+        zh: "我是復仇者…在殺掉那個男人之前，我絕對不能死。",
+        wordHint: "おと【KO】（男人）",
+        romaji: "KO",
+        correctKana: "こ",
+        distractors: ["に", "た", "て"],
+        correctIndex: 0 // A
+      },
+      {
+        id: 34,
+        speaker: "春野小櫻",
+        category: "other",
+        jpHtml: `いつも<ruby>守<rt>ま【MO】</rt></ruby>られてばかりじゃ嫌なの！<ruby>今度<rt>こんど</rt></ruby>は<ruby>私<rt>わたし</rt></ruby>が二人を<ruby>守<rt>まも</rt></ruby>る！`,
+        zh: "我才不要老是被保護呢！這次換我來保護你們兩個人！",
+        wordHint: "ま【MO】られて（被保護）",
+        romaji: "MO",
+        correctKana: "も",
+        distractors: ["し", "ま", "ち"],
+        correctIndex: 2 // C
+      },
+      {
+        id: 35,
+        speaker: "旗木卡卡西",
+        category: "other",
+        jpHtml: `<ruby>忍者<rt>にんじゃ</rt></ruby>の<ruby>世界<rt>せかい</rt></ruby>でルールを<ruby>破<rt>やぶ</rt></ruby>る<ruby>奴<rt>やつ</rt></ruby>はクズだ。だが、<ruby>仲間<rt>なかま</rt></ruby>を<ruby>大切<rt>たいせ【TSU】</rt></ruby>にしない<ruby>奴<rt>やつ</rt></ruby>はそれ<ruby>以下<rt>いか</rt></ruby>のクズだ。`,
+        zh: "在忍者的世界裡，違反規則的人是廢物；但是，不珍惜夥伴的人是連廢物都不如的廢物。",
+        wordHint: "たいせ【TSU】（珍惜／重要）",
+        romaji: "TSU",
+        correctKana: "つ",
+        distractors: ["し", "う", "て"],
+        correctIndex: 3 // D
+      },
+      {
+        id: 36,
+        speaker: "洛克・李（小李）",
+        category: "other",
+        jpHtml: `<ruby>努力<rt>どりょく</rt></ruby>で<ruby>天才<rt>てん【SA】い</rt></ruby>を<ruby>超<rt>こ</rt></ruby>えてみせます！それが<ruby>僕<rt>ぼく</rt></ruby>の<ruby>全<rt>すべ</rt></ruby>てです！`,
+        zh: "我會用努力超越天才給你看！這就是我的一切！",
+        wordHint: "てん【SA】い（天才）",
+        romaji: "SA",
+        correctKana: "さ",
+        distractors: ["き", "ち", "ら"],
+        correctIndex: 1 // B
+      },
+      {
+        id: 37,
+        speaker: "邁特・凱（阿凱老師）",
+        category: "other",
+        jpHtml: `<ruby>自分<rt>じぶん</rt></ruby>を<ruby>信<rt>【SHI】ん</rt></ruby>じない<ruby>奴<rt>やつ</rt></ruby>なんかに、<ruby>努力<rt>どりょく</rt></ruby>する<ruby>価値<rt>かち</rt></ruby>はない！`,
+        zh: "連自己都不相信的傢伙，根本沒有努力的價值！",
+        wordHint: "【SHI】んじない（不相信）",
+        romaji: "SHI",
+        correctKana: "し",
+        distractors: ["つ", "も", "ん"],
+        correctIndex: 0 // A
+      },
+      {
+        id: 38,
+        speaker: "我愛羅",
+        category: "other",
+        jpHtml: `<ruby>自分<rt>じぶん</rt></ruby>だけを<ruby>愛<rt>あい</rt></ruby>し、<ruby>自分<rt>じぶん</rt></ruby>の<ruby>為<rt>た【ME】</rt></ruby>だけに<ruby>戦<rt>たたか</rt></ruby>う… それが<ruby>砂漠<rt>さばく</rt></ruby>の<ruby>我愛羅<rt>があら</rt></ruby>だ。`,
+        zh: "只愛著自己、只為了自己而戰…這就是沙漠的我愛羅。",
+        wordHint: "た【ME】（為了…）",
+        romaji: "ME",
+        correctKana: "め",
+        distractors: ["ぬ", "あ", "の"],
+        correctIndex: 1 // B
+      },
+      {
+        id: 39,
+        speaker: "日向寧次",
+        category: "other",
+        jpHtml: `<ruby>人<rt>ひと</rt></ruby>の<ruby>運命<rt>うんめい</rt></ruby>というのは、<ruby>生<rt>【U】</rt></ruby>まれた<ruby>時<rt>とき</rt></ruby>から<ruby>決<rt>き</rt></ruby>まっているのだ。`,
+        zh: "人的命運這種東西，從出生的那一刻起就已經註定好了。",
+        wordHint: "【U】まれた（出生的）",
+        romaji: "U",
+        correctKana: "う",
+        distractors: ["つ", "ら", "て"],
+        correctIndex: 3 // D
+      },
+      {
+        id: 40,
+        speaker: "奈良鹿丸",
+        category: "other",
+        jpHtml: `まったく… どいつもこいつも、<ruby>めんどく【SA】<rt></rt></ruby>いことばかり<ruby>言<rt>い</rt></ruby>いやがって。`,
+        zh: "真是的…不管哪一個傢伙，都只會說一些真麻煩的事。",
+        wordHint: "めんどく【SA】い（真麻煩）",
+        romaji: "SA",
+        correctKana: "さ",
+        distractors: ["き", "ち", "を"],
+        correctIndex: 2 // C
+      },
+      {
+        id: 41,
+        speaker: "白（ハク）",
+        category: "other",
+        jpHtml: `<ruby>人<rt>ひと</rt></ruby>は… <ruby>大切<rt>たいせつ</rt></ruby>な<ruby>何か<rt>なにか</rt></ruby>を<ruby>守<rt>まも</rt></ruby>りたいと<ruby>思<rt>おも</rt></ruby>った<ruby>時<rt>とき</rt></ruby>、<ruby>本当<rt>ほんとう</rt></ruby>に<ruby>強<rt>つ【YO】</rt></ruby>くなれるものなのです。`,
+        zh: "人啊…在想要保護某個重要事物的時候，就能變得真正堅強。",
+        wordHint: "つ【YO】く（堅強地）",
+        romaji: "YO",
+        correctKana: "よ",
+        distractors: ["ま", "は", "ほ"],
+        correctIndex: 0 // A
+      },
+      {
+        id: 42,
+        speaker: "桃地再不斬",
+        category: "other",
+        jpHtml: `<ruby>泣<rt>な</rt></ruby>くな<ruby>小僧<rt>こぞう</rt></ruby>… お<ruby>前<rt>まえ</rt></ruby>の<ruby>言葉<rt>こと【BA】</rt></ruby>は、<ruby>心<rt>こころ</rt></ruby>を<ruby>斬<rt>き</rt></ruby>り裂く。`,
+        zh: "別哭了小子…你的話語，簡直把我的心都劈開了。",
+        wordHint: "こと【BA】（話語）",
+        romaji: "BA",
+        correctKana: "ば",
+        distractors: ["ほ", "ま", "ぱ"],
+        correctIndex: 3 // D
+      },
+      {
+        id: 43,
+        speaker: "自來也",
+        category: "other",
+        jpHtml: `<ruby>忍<rt>しのび</rt></ruby>とは… <ruby>忍<rt>た</rt></ruby>え<ruby>忍<rt>しの</rt></ruby>ぶ<ruby>者<rt>も【NO】</rt></ruby>の<ruby>事<rt>こと</rt></ruby>なんだよ。`,
+        zh: "所謂的忍者…就是指能夠忍耐到底的人啊。",
+        wordHint: "も【NO】（人／者）",
+        romaji: "NO",
+        correctKana: "の",
+        distractors: ["め", "ぬ", "あ"],
+        correctIndex: 1 // B
+      },
+      {
+        id: 44,
+        speaker: "三代火影（猿飛蒜山）",
+        category: "other",
+        jpHtml: `<ruby>木ノ葉<rt>この【HA】</rt></ruby>舞う<ruby>処<rt>ところ</rt></ruby>、<ruby>火<rt>ひ</rt></ruby>は<ruby>燃<rt>も</rt></ruby>ゆる… <ruby>火<rt>ひ</rt></ruby>の<ruby>影<rt>かげ</rt></ruby>は里を<ruby>照<rt>て</rt></ruby>らし、また<ruby>新<rt>あら</rt></ruby>たな<ruby>木の葉<rt>このは</rt></ruby>が<ruby>芽吹<rt>めぶ</rt></ruby>く。`,
+        zh: "木葉飛舞之處，火亦生生不息…火光將會照耀村子，並且讓新生的木葉再次發芽。",
+        wordHint: "この【HA】（木葉）",
+        romaji: "HA",
+        correctKana: "は",
+        distractors: ["ほ", "ま", "よ"],
+        correctIndex: 0 // A
+      },
+      {
+        id: 45,
+        speaker: "千手綱手",
+        category: "other",
+        jpHtml: `<ruby>命<rt>いの【CHI】</rt></ruby>を<ruby>懸<rt>か</rt></ruby>けるなとは言わん… だが、<ruby>死<rt>し</rt></ruby>ぬな！`,
+        zh: "我不會叫你們別賭上性命…但是，絕對不准死！",
+        wordHint: "いの【CHI】（性命）",
+        romaji: "CHI",
+        correctKana: "ち",
+        distractors: ["さ", "ら", "ろ"],
+        correctIndex: 2 // C
+      },
+      {
+        id: 46,
+        speaker: "大蛇丸",
+        category: "other",
+        jpHtml: `<ruby>この世<rt>このよ</rt></ruby>の<ruby>全<rt>すべ</rt></ruby>ての<ruby>術<rt>じゅつ</rt></ruby>を<ruby>手<rt>て</rt></ruby>に<ruby>入<rt>【I】</rt></ruby>れることこそ、<ruby>私<rt>わたし</rt></ruby>の<ruby>望<rt>のぞ</rt></ruby>みよ。`,
+        zh: "將這世上所有的忍術都納入掌中，才是我真正的願望。",
+        wordHint: "【I】れる（放入／獲得）",
+        romaji: "I",
+        correctKana: "い",
+        distractors: ["り", "こ", "に"],
+        correctIndex: 3 // D
+      },
+      {
+        id: 47,
+        speaker: "漩渦鳴人",
+        category: "other",
+        jpHtml: `サスケ！お<ruby>前<rt>まえ</rt></ruby>は<ruby>俺<rt>おれ</rt></ruby>にとって、やっとできた<ruby>大切<rt>たいせつ</rt></ruby>な<ruby>つなが【RI】<rt></rt></ruby>なんだ！`,
+        zh: "佐助！你對我來說，是我好不容易才擁有的重要羈絆啊！",
+        wordHint: "つなが【RI】（羈絆／連結）",
+        romaji: "RI",
+        correctKana: "り",
+        distractors: ["い", "け", "に"],
+        correctIndex: 1 // B
+      },
+      {
+        id: 48,
+        speaker: "秋道丁次",
+        category: "other",
+        jpHtml: `<ruby>最後<rt>さいご</rt></ruby>の<ruby>一口<rt>ひとくち</rt></ruby>と、デブって<ruby>言<rt>い</rt></ruby>うのだけは、<ruby>絶対<rt>ぜったい</rt></ruby>に<ruby>許<rt>【YU】る</rt></ruby>さない！`,
+        zh: "只有吃掉最後一口零食，還有罵我肥豬這兩件事，我絕對不原諒！",
+        wordHint: "【YU】るさない（絕不原諒）",
+        romaji: "YU",
+        correctKana: "ゆ",
+        distractors: ["わ", "ね", "や"],
+        correctIndex: 2 // C
+      },
+      {
+        id: 49,
+        speaker: "伊魯卡老師（海野伊魯卡）",
+        category: "other",
+        jpHtml: `ナルトはもう、<ruby>妖狐<rt>ようこ</rt></ruby>なんかじゃ<ruby>あり【MA】<rt></rt></ruby>せん！<ruby>木ノ葉隠<rt>このはがく</rt></ruby>れの里の<ruby>立派<rt>りっぱ</rt></ruby>な<ruby>忍者<rt>にんじゃ</rt></ruby>です！`,
+        zh: "鳴人已經不是什麼妖狐了！他是木葉忍者村裡一位堂堂正正的優秀忍者！",
+        wordHint: "あり【MA】せん（不是…）",
+        romaji: "MA",
+        correctKana: "ま",
+        distractors: ["は", "ほ", "よ"],
+        correctIndex: 0 // A
+      },
+      {
+        id: 50,
+        speaker: "宇智波佐助",
+        category: "other",
+        jpHtml: `お<ruby>前<rt>ま【E】</rt></ruby>はやっぱり… うるさいウスラトンカチだ。`,
+        zh: "你這傢伙果然還是…吵死人的吊車尾大笨蛋。",
+        wordHint: "ま【E】（面前／你）",
+        romaji: "E",
+        correctKana: "え",
+        distractors: ["ん", "そ", "ろ"],
+        correctIndex: 1 // B
+      }
+    ];
+
+    // Helper to build the 4 options array putting correctKana at correctIndex
+    function buildOptions(q) {
+      const opts = [...q.distractors];
+      opts.splice(q.correctIndex, 0, q.correctKana);
+      return opts;
+    }
+
+    // ============================================================================
+    // 2. MATCHING EXERCISES DATA (2 PAGES, 20 ITEMS PER PAGE)
+    // ============================================================================
+    const matchingPage1Left = [
+      { num: 1, kana: "にんどう", romaji: "nindou", ansLetter: "M", zh: "忍道" },
+      { num: 2, kana: "なかま", romaji: "nakama", ansLetter: "F", zh: "夥伴" },
+      { num: 3, kana: "しゃりんがん", romaji: "sharingan", ansLetter: "S", zh: "寫輪眼" },
+      { num: 4, kana: "びゃくがん", romaji: "byakugan", ansLetter: "B", zh: "白眼" },
+      { num: 5, kana: "くぐつ", romaji: "kugutsu", ansLetter: "P", zh: "傀儡" },
+      { num: 6, kana: "げいじゅつ", romaji: "geijutsu", ansLetter: "I", zh: "藝術" },
+      { num: 7, kana: "えいえん", romaji: "eien", ansLetter: "T", zh: "永遠／永恆" },
+      { num: 8, kana: "ゆうき", romaji: "yuuki", ansLetter: "D", zh: "勇氣" },
+      { num: 9, kana: "えがお", romaji: "egao", ansLetter: "L", zh: "笑容" },
+      { num: 10, kana: "うんめい", romaji: "unmei", ansLetter: "A", zh: "命運" },
+      { num: 11, kana: "どりょく", romaji: "doryoku", ansLetter: "R", zh: "努力" },
+      { num: 12, kana: "てんさい", romaji: "tensai", ansLetter: "G", zh: "天才" },
+      { num: 13, kana: "ほかげ", romaji: "hokage", ansLetter: "N", zh: "火影" },
+      { num: 14, kana: "かぜかげ", romaji: "kazekage", ansLetter: "C", zh: "風影" },
+      { num: 15, kana: "あかつき", romaji: "akatsuki", ansLetter: "Q", zh: "曉（組織名）" },
+      { num: 16, kana: "つくよみ", romaji: "tsukuyomi", ansLetter: "E", zh: "月讀" },
+      { num: 17, kana: "あまてらす", romaji: "amaterasu", ansLetter: "K", zh: "天照" },
+      { num: 18, kana: "ちどり", romaji: "chidori", ansLetter: "O", zh: "千鳥" },
+      { num: 19, kana: "らせんがん", romaji: "rasengan", ansLetter: "H", zh: "螺旋丸" },
+      { num: 20, kana: "かげぶんしん", romaji: "kagebunshin", ansLetter: "J", zh: "影分身" }
+    ];
+
+    const matchingPage2Left = [
+      { num: 21, kana: "こころ", romaji: "kokoro", ansLetter: "H", zh: "心／內心" },
+      { num: 22, kana: "ことば", romaji: "kotoba", ansLetter: "N", zh: "話語／言語" },
+      { num: 23, kana: "いのち", romaji: "inochi", ansLetter: "C", zh: "性命／生命" },
+      { num: 24, kana: "おとうと", romaji: "otouto", ansLetter: "R", zh: "弟弟" },
+      { num: 25, kana: "にいさん", romaji: "niisan", ansLetter: "A", zh: "哥哥" },
+      { num: 26, kana: "せんせい", romaji: "sensei", ansLetter: "M", zh: "老師" },
+      { num: 27, kana: "しのび", romaji: "shinobi", ansLetter: "T", zh: "忍者（忍）" },
+      { num: 28, kana: "このは", romaji: "konoha", ansLetter: "E", zh: "木葉" },
+      { num: 29, kana: "さばく", romaji: "sabaku", ansLetter: "P", zh: "沙漠" },
+      { num: 30, kana: "やくそく", romaji: "yakusoku", ansLetter: "J", zh: "約定" },
+      { num: 31, kana: "きずな", romaji: "kizuna", ansLetter: "B", zh: "羈絆" },
+      { num: 32, kana: "ふくしゅう", romaji: "fukushuu", ansLetter: "S", zh: "復仇" },
+      { num: 33, kana: "にくしみ", romaji: "nikushimi", ansLetter: "G", zh: "憎恨" },
+      { num: 34, kana: "しっぱい", romaji: "shippai", ansLetter: "L", zh: "失敗" },
+      { num: 35, kana: "せいこう", romaji: "seikou", ansLetter: "D", zh: "成功" },
+      { num: 36, kana: "まもる", romaji: "mamoru", ansLetter: "Q", zh: "保護／守護" },
+      { num: 37, kana: "しんじる", romaji: "shinjiru", ansLetter: "I", zh: "相信" },
+      { num: 38, kana: "あきらめない", romaji: "akiramenai", ansLetter: "O", zh: "不放棄" },
+      { num: 39, kana: "だいすき", romaji: "daisuki", ansLetter: "F", zh: "最喜歡" },
+      { num: 40, kana: "めんどくさい", romaji: "mendokusai", ansLetter: "K", zh: "真麻煩" }
+    ];
+
+    // ============================================================================
+    // 3. 20 HIRAGANA CHARACTER NAMES DATA
+    // ============================================================================
+    const charNamesData = [
+      { id: 1, hiragana: "うずまき なると", romaji: "Uzumaki Naruto", kanji: "漩渦鳴人（うずまきナルト）", clue: "木葉九尾人柱力・最愛一樂拉麵" },
+      { id: 2, hiragana: "ひゅうが ひなた", romaji: "Hyuuga Hinata", kanji: "日向雛田（日向ヒナタ）", clue: "日向宗家大小姐・一直暗戀並支持鳴人" },
+      { id: 3, hiragana: "うちは いたち", romaji: "Uchiha Itachi", kanji: "宇智波鼬（うちはイタチ）", clue: "佐助的哥哥・曉組織成員・萬花筒寫輪眼" },
+      { id: 4, hiragana: "あかすなの さそり", romaji: "Akasuna no Sasori", kanji: "赤砂之蠍（赤砂のサソリ）", clue: "砂隱天才傀儡師・追求永恆之美的藝術家" },
+      { id: 5, hiragana: "うちは さすけ", romaji: "Uchiha Sasuke", kanji: "宇智波佐助（うちはサスケ）", clue: "第七班成員・宇智波一族倖存者" },
+      { id: 6, hiragana: "はるの さくら", romaji: "Haruno Sakura", kanji: "春野小櫻（春野サクラ）", clue: "第七班成員・綱手親傳怪力醫療女忍" },
+      { id: 7, hiragana: "はたけ かかし", romaji: "Hatake Kakashi", kanji: "旗木卡卡西（はたけカカシ）", clue: "第七班指導上忍・拷貝忍者" },
+      { id: 8, hiragana: "ひゅうが ねじ", romaji: "Hyuuga Neji", kanji: "日向寧次（日向ネジ）", clue: "雛田的堂兄・日向一族第一天才" },
+      { id: 9, hiragana: "ろっく りー", romaji: "Rokku Rii", kanji: "洛克・李／小李（ロック・リー）", clue: "粗眉熱血體術專家・阿凱老師的愛徒" },
+      { id: 10, hiragana: "さばくの があら", romaji: "Sabaku no Gaara", kanji: "沙漠之我愛羅（砂瀑の我愛羅）", clue: "一尾守鶴人柱力・額頭刻著「愛」字" },
+      { id: 11, hiragana: "なら しかまる", romaji: "Nara Shikamaru", kanji: "奈良鹿丸（奈良シカマル）", clue: "口頭禪「真麻煩」・智商超過200的影子術師" },
+      { id: 12, hiragana: "あきみち ちょうじ", romaji: "Akimichi Chouji", kanji: "秋道丁次（秋道チョウジ）", clue: "鹿丸最好的摯友・倍化之術與洋芋片愛好者" },
+      { id: 13, hiragana: "やまなか いの", romaji: "Yamanaka Ino", kanji: "山中井野（山中イノ）", clue: "小櫻的摯友兼情敵・心轉身之術傳人" },
+      { id: 14, hiragana: "いぬづか きば", romaji: "Inuzuka Kiba", kanji: "犬塚牙（犬塚キバ）", clue: "第八班雛田的隊友・帶著忍犬赤丸" },
+      { id: 15, hiragana: "あぶられ しの", romaji: "Aburame Shino", kanji: "油女志乃（油女シノ）", clue: "第八班雛田的隊友・操控寄壞蟲的冷靜忍者" },
+      { id: 16, hiragana: "うみの いるか", romaji: "Umino Iruka", kanji: "海野伊魯卡（うみのイルカ）", clue: "忍者學校老師・第一個認同鳴人的人" },
+      { id: 17, hiragana: "じらいや", romaji: "Jiraiya", kanji: "自來也（自来也）", clue: "傳說中的三忍・妙木山蝦蟆仙人" },
+      { id: 18, hiragana: "おろちまる", romaji: "Orochimaru", kanji: "大蛇丸（大蛇丸）", clue: "傳說中的三忍・追求永生與世間所有忍術" },
+      { id: 19, hiragana: "せんじゅ つなで", romaji: "Senju Tsunade", kanji: "千手綱手（千手綱手）", clue: "傳說中的三忍・第五代火影" },
+      { id: 20, hiragana: "ももち ざぶざ", romaji: "Momochi Zabuza", kanji: "桃地再不斬（桃地再不斬）", clue: "霧隱鬼人・斬首大刀持有者・與白生死相隨" }
+    ];
+
+    // ============================================================================
+    // RENDER FUNCTIONS
+    // ============================================================================
+    const optionLetters = ["A", "B", "C", "D"];
+    let showInstantFeedback = false;
+
+    function getCategoryStyle(cat) {
+      switch (cat) {
+        case "hinata":
+          return {
+            border: "border-indigo-400",
+            badgeBg: "bg-indigo-600 text-white",
+            cardBg: "bg-indigo-50/40",
+            icon: "💜"
+          };
+        case "itachi":
+          return {
+            border: "border-red-700",
+            badgeBg: "bg-red-800 text-white",
+            cardBg: "bg-red-50/40",
+            icon: "🩸"
+          };
+        case "sasori":
+          return {
+            border: "border-rose-500",
+            badgeBg: "bg-rose-600 text-white",
+            cardBg: "bg-rose-50/40",
+            icon: "🦂"
+          };
+        default:
+          return {
+            border: "border-orange-400",
+            badgeBg: "bg-orange-500 text-white",
+            cardBg: "bg-amber-50/40",
+            icon: "🍥"
+          };
+      }
+    }
+
+    function renderQuestions() {
+      const container = document.getElementById("questions-container");
+      container.innerHTML = questionsData.map((q) => {
+        const style = getCategoryStyle(q.category);
+        const options = buildOptions(q);
+
+        return `
+          <div class="question-card rounded-2xl border-2 ${style.border} ${style.cardBg} bg-white p-4 shadow-sm transition-all" id="qcard-${q.id}">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-lg font-black text-xs ${style.badgeBg}">
+                  第 ${q.id} 題
+                </span>
+                <span class="font-bold text-sm text-slate-800">
+                  ${style.icon} ${q.speaker}
+                </span>
+              </div>
+              <div class="text-xs font-bold px-2.5 py-0.5 rounded-md bg-amber-100 text-amber-900 border border-amber-300">
+                🎯 目標詞彙：${q.wordHint}
+              </div>
+            </div>
+
+            <!-- Japanese Sentence with Ruby and Romaji Box -->
+            <div class="jp-text text-lg md:text-xl font-bold text-slate-900 bg-slate-50 px-3.5 py-2.5 rounded-xl border border-slate-200 mb-2">
+              「${q.jpHtml}」
+            </div>
+
+            <!-- Chinese Translation -->
+            <div class="text-xs md:text-sm text-slate-600 font-medium mb-3 pl-1">
+              💬 中文：「${q.zh}」
+            </div>
+
+            <!-- 4 Hiragana Options -->
+            <div class="grid grid-cols-4 gap-2.5">
+              ${options.map((kana, idx) => `
+                <button
+                  type="button"
+                  onclick="selectOption(${q.id}, ${idx}, ${q.correctIndex})"
+                  id="q-${q.id}-opt-${idx}"
+                  class="option-btn flex items-center justify-center gap-2 py-2 px-3 rounded-xl border-2 border-slate-300 bg-white hover:border-orange-500 text-slate-800 font-bold shadow-sm"
+                >
+                  <span class="w-6 h-6 rounded-full bg-slate-100 text-slate-700 text-xs font-black flex items-center justify-center border border-slate-300">
+                    ${optionLetters[idx]}
+                  </span>
+                  <span class="jp-text text-xl md:text-2xl font-black leading-none">${kana}</span>
+                </button>
+              `).join("")}
+            </div>
+
+            <!-- Instant Answer Feedback Box -->
+            <div id="q-${q.id}-feedback" class="hidden mt-2.5 text-xs font-bold px-3 py-1.5 rounded-lg"></div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function selectOption(qId, chosenIdx, correctIdx) {
+      const q = questionsData.find(item => item.id === qId);
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`q-${qId}-opt-${i}`);
+        btn.classList.remove("border-emerald-600", "bg-emerald-50", "border-red-500", "bg-red-50", "border-orange-500", "bg-orange-50");
+      }
+
+      const chosenBtn = document.getElementById(`q-${qId}-opt-${chosenIdx}`);
+      const feedbackEl = document.getElementById(`q-${qId}-feedback`);
+
+      if (showInstantFeedback) {
+        feedbackEl.classList.remove("hidden");
+        if (chosenIdx === correctIdx) {
+          chosenBtn.classList.add("border-emerald-600", "bg-emerald-50");
+          feedbackEl.className = "mt-2.5 text-xs font-bold px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-900 border border-emerald-300";
+          feedbackEl.innerHTML = `✅ 答對了！【${q.romaji}】就是平假名「${q.correctKana}」（正確答案：${optionLetters[correctIdx]}）`;
+        } else {
+          chosenBtn.classList.add("border-red-500", "bg-red-50");
+          const rightBtn = document.getElementById(`q-${qId}-opt-${correctIdx}`);
+          rightBtn.classList.add("border-emerald-600", "bg-emerald-50");
+          feedbackEl.className = "mt-2.5 text-xs font-bold px-3 py-1.5 rounded-lg bg-red-100 text-red-900 border border-red-300";
+          feedbackEl.innerHTML = `❌ 再看仔細一點喔！【${q.romaji}】對應的平假名是「${q.correctKana}」（正確答案：${optionLetters[correctIdx]}）`;
+        }
+      } else {
+        chosenBtn.classList.add("border-orange-500", "bg-orange-50");
+      }
+    }
+
+    function toggleInteractiveAns() {
+      showInstantFeedback = !showInstantFeedback;
+      const btn = document.getElementById("toggleAnsBtn");
+      if (showInstantFeedback) {
+        btn.innerHTML = "✅ 即時對答模式：開啟中";
+        btn.classList.replace("bg-indigo-600", "bg-emerald-600");
+      } else {
+        btn.innerHTML = "👁️ 顯示題目即時對答";
+        btn.classList.replace("bg-emerald-600", "bg-indigo-600");
+        questionsData.forEach(q => {
+          const fb = document.getElementById(`q-${q.id}-feedback`);
+          if (fb) fb.classList.add("hidden");
+        });
+      }
+    }
+
+    function renderMatchingSection(containerId, leftItems, themeColor) {
+      // Build Right Column sorted A to T
+      const rightItems = [...leftItems].sort((a, b) => a.ansLetter.localeCompare(b.ansLetter));
+      const container = document.getElementById(containerId);
+
+      container.innerHTML = `
+        <div class="grid grid-cols-12 gap-2 items-center font-black text-xs uppercase tracking-wider text-slate-500 border-b-2 border-slate-200 pb-2 mb-2">
+          <div class="col-span-6">左排：日文假名詞彙（請填入右排代號 A~T 或畫線連接）</div>
+          <div class="col-span-1 text-center">連線區</div>
+          <div class="col-span-5">右排：中文意思（A ～ T）</div>
+        </div>
+        <div class="space-y-1.5">
+          ${leftItems.map((left, idx) => {
+            const right = rightItems[idx];
+            return `
+              <div class="grid grid-cols-12 gap-2 items-center py-1 px-2 rounded-lg odd:bg-slate-50">
+                <!-- Left Column Item -->
+                <div class="col-span-6 flex items-center justify-between pr-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-md bg-${themeColor}-600 text-white font-black text-xs flex items-center justify-center shrink-0">
+                      ${left.num}
+                    </span>
+                    <span class="jp-text font-black text-base text-slate-900">${left.kana}</span>
+                    <span class="text-xs text-slate-400 font-mono">(${left.romaji})</span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-xs font-bold text-slate-500">（<span class="inline-block w-5 text-center"></span>）</span>
+                    <span class="w-3 h-3 rounded-full border-2 border-${themeColor}-600 bg-white inline-block"></span>
+                  </div>
+                </div>
+
+                <!-- Middle Spacer for Line Drawing -->
+                <div class="col-span-1 text-center text-slate-300 text-xs select-none">
+                  ・・・
+                </div>
+
+                <!-- Right Column Item -->
+                <div class="col-span-5 flex items-center gap-2 pl-2">
+                  <span class="w-3 h-3 rounded-full border-2 border-amber-500 bg-white inline-block shrink-0"></span>
+                  <span class="w-6 h-6 rounded-md bg-amber-100 border border-amber-400 text-amber-900 font-black text-xs flex items-center justify-center shrink-0">
+                    ${right.ansLetter}
+                  </span>
+                  <span class="font-bold text-sm text-slate-800">${right.zh}</span>
+                </div>
+              </div>
+            `;
+          }).join("")}
+        </div>
+      `;
+    }
+
+    function renderCharacterQuiz() {
+      const container = document.getElementById("char-quiz-container");
+      container.innerHTML = charNamesData.map((char) => `
+        <div class="question-card bg-white rounded-2xl border-2 border-purple-300 p-4 shadow-sm flex flex-col justify-between gap-2">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-0.5 rounded-lg bg-purple-700 text-white font-black text-xs">
+              角色 #${char.id}
+            </span>
+            <span class="text-xs text-purple-700 font-bold bg-purple-50 px-2.5 py-0.5 rounded-md border border-purple-200">
+              💡 提示：${char.clue}
+            </span>
+          </div>
+
+          <div class="my-1 bg-purple-50/60 border border-purple-200 rounded-xl px-4 py-2.5 flex items-center justify-between">
+            <span class="jp-text text-xl md:text-2xl font-black text-purple-950 tracking-wider">
+              ${char.hiragana}
+            </span>
+            <span class="text-xs font-mono text-slate-400">${char.romaji}</span>
+          </div>
+
+          <div class="flex items-center gap-2 pt-1">
+            <span class="text-xs font-black text-slate-600 shrink-0">✍️ 中文漢字名稱：</span>
+            <input
+              type="text"
+              placeholder="請手寫或輸入角色名稱..."
+              class="w-full border-b-2 border-purple-400 bg-transparent px-2 py-1 text-sm font-bold text-slate-900 focus:outline-none focus:border-orange-500"
+            />
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function renderAnswerKeys() {
+      // 1. 50 MC Answers
+      const mcGrid = document.getElementById("mc-answers-grid");
+      mcGrid.innerHTML = questionsData.map((q) => `
+        <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+          <div>
+            <span class="font-black text-slate-700">${q.id}.</span>
+            <span class="font-black text-red-600 text-base ml-1">${optionLetters[q.correctIndex]}</span>
+            <span class="jp-text font-bold text-slate-900 ml-1">（${q.correctKana}）</span>
+          </div>
+          <span class="text-[11px] font-mono bg-orange-100 text-orange-900 px-1.5 py-0.5 rounded font-bold">${q.romaji}</span>
+        </div>
+      `).join("");
+
+      // 2. Matching Page 1 Answers
+      const m1Grid = document.getElementById("match1-answers-grid");
+      m1Grid.innerHTML = matchingPage1Left.map((item) => `
+        <div class="p-1.5 rounded-lg bg-emerald-50/70 border border-emerald-200 flex items-center justify-between">
+          <span><strong>${item.num}.</strong> ${item.kana}</span>
+          <span class="font-black text-emerald-800">${item.ansLetter}（${item.zh}）</span>
+        </div>
+      `).join("");
+
+      // 3. Matching Page 2 Answers
+      const m2Grid = document.getElementById("match2-answers-grid");
+      m2Grid.innerHTML = matchingPage2Left.map((item) => `
+        <div class="p-1.5 rounded-lg bg-cyan-50/70 border border-cyan-200 flex items-center justify-between">
+          <span><strong>${item.num}.</strong> ${item.kana}</span>
+          <span class="font-black text-cyan-800">${item.ansLetter}（${item.zh}）</span>
+        </div>
+      `).join("");
+
+      // 4. 20 Character Answers
+      const charGrid = document.getElementById("char-answers-grid");
+      charGrid.innerHTML = charNamesData.map((c) => `
+        <div class="p-2 rounded-xl bg-purple-50/70 border border-purple-200">
+          <div class="font-black text-purple-900">#${c.id} ${c.hiragana}</div>
+          <div class="font-bold text-slate-800 mt-0.5">👉 ${c.kanji}</div>
+        </div>
+      `).join("");
+    }
+
+    // Initialize Workbook on Load
+    window.addEventListener("DOMContentLoaded", () => {
+      renderQuestions();
+      renderMatchingSection("matching-page-1", matchingPage1Left, "emerald");
+      renderMatchingSection("matching-page-2", matchingPage2Left, "cyan");
+      renderCharacterQuiz();
+      renderAnswerKeys();
+    });
+  </script>
+</body>
+</html>
